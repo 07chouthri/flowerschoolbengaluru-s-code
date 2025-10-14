@@ -70,7 +70,6 @@ export function EnrollmentDialog({ isOpen, onClose, courseTitle, courseId, batch
         } else if (!validatePhone(formData.phone)) {
             errors.phone = 'Please enter a valid 10-digit Indian mobile number (starting with 6-9)';
         }
-
         setValidationErrors(errors);
         return Object.keys(errors).length === 0;
     };

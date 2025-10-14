@@ -94,7 +94,6 @@ const AdminDashboard = ({ onClose }: AdminDashboardProps) => {
   return (
     <div className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
       <div className="bg-background rounded-2xl shadow-2xl max-w-7xl w-full max-h-[90vh] overflow-hidden">
-        {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-border bg-gradient-card">
           <div>
             <h1 className="text-3xl font-bold text-foreground">Admin Dashboard</h1>

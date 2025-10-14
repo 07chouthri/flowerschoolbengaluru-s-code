@@ -2276,12 +2276,8 @@ const Admin = () => {
                             <SelectValue placeholder="Select category" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Beginner">Beginner</SelectItem>
-                            <SelectItem value="Intermediate">Intermediate</SelectItem>
-                            <SelectItem value="Advanced">Advanced</SelectItem>
-                            <SelectItem value="Workshop">Workshop</SelectItem>
-                            <SelectItem value="Masterclass">Masterclass</SelectItem>
-                            <SelectItem value="Professional Courses">Professional Courses</SelectItem>
+                          
+                            <SelectItem value="Professional Courses">Diploma course</SelectItem>
                             <SelectItem value="Special Workshops">Special Workshops</SelectItem>
                           </SelectContent>
                         </Select>

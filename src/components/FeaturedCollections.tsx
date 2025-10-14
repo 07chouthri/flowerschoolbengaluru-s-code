@@ -147,8 +147,8 @@ const FeaturedCollections = () => {
 
   const handleLike = (index: number, e: React.MouseEvent) => {
     e.stopPropagation();
-    setLikedCards(prev => 
-      prev.includes(index) 
+    setLikedCards(prev =>
+      prev.includes(index)
         ? prev.filter(i => i !== index)
         : [...prev, index]
     );
@@ -162,9 +162,8 @@ const FeaturedCollections = () => {
     <section ref={sectionRef} className="py-8 md:py-16 lg:py-20 relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Animated Header */}
-        <div className={`text-center mb-10 md:mb-14 transform transition-all duration-1000 ${
-          isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-        }`}>
+        <div className={`text-center mb-10 md:mb-14 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+          }`}>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-2 md:mb-4 font-playfair">
             <span className="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
               Featured Collections

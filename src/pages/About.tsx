@@ -555,7 +555,7 @@ const About = () => {
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
           <span className="bg-gradient-to-r from-pink-600 to-rose-600 bg-clip-text text-transparent">
-            Professional Courses
+            Diploma course
           </span>
         </h2>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto font-sans">

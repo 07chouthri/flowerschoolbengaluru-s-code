@@ -79,12 +79,6 @@ const Hero = ({ onNavigate }: HeroProps) => {
   if (showEventVenue) {
     return (
       <div>
-        <Button
-          onClick={handleBackToHome}
-          className="fixed top-4 left-4 z-50 bg-pink-500 hover:bg-pink-600 text-white"
-        >
-          ← Back to Home
-        </Button>
         <EventVenue />
       </div>
     );
@@ -268,7 +262,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                             <div className="w-6 h-6 bg-rose-100 rounded-lg flex items-center justify-center">
                               <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
                             </div>
-                            <span className="text-gray-700 text-sm">Fresh Flowers Daily</span>
+                            <span className="text-gray-700 text-sm">Event Decor</span>
                           </div>
                           <div className="flex items-center gap-3">
                             <div className="w-6 h-6 bg-rose-100 rounded-lg flex items-center justify-center">
@@ -283,7 +277,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                         <Button
                           size="lg"
                           className="bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl hover:from-rose-600 hover:to-pink-600 shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 px-8 py-3 font-semibold"
-                          onClick={() => window.open("https://flowerschoolbengaluru.com/shop", "_blank")}
+                          onClick={() => window.open("https://app.flowerschoolbengaluru.com/shop", "_blank")}
                         >
                           Shop Bouquets
                         </Button>
@@ -335,7 +329,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                     <div className="w-8 h-8 bg-rose-100 rounded-lg flex items-center justify-center">
                       <div className="w-2 h-2 bg-rose-500 rounded-full"></div>
                     </div>
-                    <span className="text-gray-700 font-medium">Full Support</span>
+                    <span className="text-gray-700 font-medium">Pantry Room</span>
                   </div>
                 </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
@@ -27,7 +27,7 @@ interface FlowerClass {
   nextbatch: string;
   created_at: string;
   image: string | null;
-  category?: "Beginner" | "Intermediate" | "Advanced" | "Special Workshops"| "Professional Courses"| null;
+  category?: "Special Workshops" | "Diploma course" | null;
   capacity?: number;
   enrolled?: number;
   rating?: number;
@@ -51,6 +51,7 @@ const Classes = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const [expandedDescriptions, setExpandedDescriptions] = useState<Set<string>>(new Set());
   const [expandedFeatures, setExpandedFeatures] = useState<Set<string>>(new Set());
+  const coursesSectionRef = useRef<HTMLDivElement>(null);
 
   // Achievements data following project patterns
   const achievements: Achievement[] = [
@@ -236,6 +237,14 @@ const Classes = () => {
     ? classes
     : classes.filter((cls) => cls.category === selectedLevel);
 
+  // Scroll to courses section and set filter
+  const handleCourseTypeClick = (level: string) => {
+    setSelectedLevel(level);
+    setTimeout(() => {
+      coursesSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }, 100); // allow filter to update first
+  };
+
   return (
     <>
       <SEO
@@ -271,7 +280,10 @@ const Classes = () => {
             <div className="container mx-auto px-4">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-2xl mx-auto">
                 {/* Diploma Courses Box */}
-                <div className="flex items-center gap-4 bg-white border-2 border-pink-200 rounded-xl p-4 w-full sm:w-auto hover:border-pink-400 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                <div
+                  className="flex items-center gap-4 bg-white border-2 border-pink-200 rounded-xl p-4 w-full sm:w-auto hover:border-pink-400 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  onClick={() => handleCourseTypeClick("Diploma courses")}
+                >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                     <GraduationCap className="w-6 h-6" />
                   </div>
@@ -282,7 +294,10 @@ const Classes = () => {
                 </div>
 
                 {/* Workshops Box */}
-                <div className="flex items-center gap-4 bg-white border-2 border-purple-200 rounded-xl p-4 w-full sm:w-auto hover:border-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer group">
+                <div
+                  className="flex items-center gap-4 bg-white border-2 border-purple-200 rounded-xl p-4 w-full sm:w-auto hover:border-purple-400 hover:shadow-lg transition-all duration-300 cursor-pointer group"
+                  onClick={() => handleCourseTypeClick("Special Workshops")}
+                >
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300">
                     <BookOpen className="w-6 h-6" />
                   </div>
@@ -349,7 +364,7 @@ const Classes = () => {
 
               {/* Level Filter */}
               <div className="flex justify-center gap-2 mb-8 flex-wrap">
-                {["All", "Beginner", "Intermediate", "Advanced","Professional Courses","Special Workshops"].map((level) => (
+                {["Diploma courses","Special Workshops"].map((level) => (
                   <Button
                     key={level}
                     variant={selectedLevel === level ? "default" : "outline"}
@@ -373,7 +388,7 @@ const Classes = () => {
           </section>
 
           {/* Classes Available Section */}
-          <section className="py-10 bg-white">
+          <section className="py-10 bg-white" ref={coursesSectionRef}>
             <div className="container mx-auto">
               {filtered.length === 0 ? (
                 <div className="text-center py-16">
