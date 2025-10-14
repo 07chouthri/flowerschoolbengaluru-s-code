@@ -76,20 +76,6 @@ const Hero = ({ onNavigate }: HeroProps) => {
     setShowEventVenue(false);
   };
 
-  if (showEventVenue) {
-    return (
-      <div>
-        <Button
-          onClick={handleBackToHome}
-          className="fixed top-4 left-4 z-50 bg-pink-500 hover:bg-pink-600 text-white"
-        >
-          ← Back to Home
-        </Button>
-        <EventVenue />
-      </div>
-    );
-  }
-
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden py-4 md:py-20">
       {/* Cherry Blossom Background */}
