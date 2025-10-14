@@ -283,7 +283,7 @@ const Hero = ({ onNavigate }: HeroProps) => {
                         <Button
                           size="lg"
                           className="bg-gradient-to-r from-rose-500 to-pink-500 text-white rounded-xl hover:from-rose-600 hover:to-pink-600 shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 px-8 py-3 font-semibold"
-                          onClick={() => window.open("https://flowerschoolbengaluru.com/shop", "_blank")}
+                          onClick={() => window.open("https://app.flowerschoolbengaluru.com/shop", "_blank")}
                         >
                           Shop Bouquets
                         </Button>
