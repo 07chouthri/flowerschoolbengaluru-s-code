@@ -76,6 +76,14 @@ const Hero = ({ onNavigate }: HeroProps) => {
     setShowEventVenue(false);
   };
 
+  if (showEventVenue) {
+    return (
+      <div>
+        <EventVenue />
+      </div>
+    );
+  }
+
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-center justify-center overflow-hidden py-4 md:py-20">
       {/* Cherry Blossom Background */}
